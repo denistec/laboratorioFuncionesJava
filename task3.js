@@ -2,21 +2,26 @@
 
 const prompt = require("prompt-sync")();
 
-let productoAbuscar = prompt("ingresa el nombre del producto ")
-let inventario = [{ nombre: "Camisa", precio: 20 },{ nombre: "Zapatos", precio: 50 }];
-console.log(inventario);
-console.log(typeof(inventario));
+let productoIngresado = prompt("ingresa el nombre del producto ")
 
-function buscarProducto() {
-    for (let i = 0; i < inventario.length; i++) {
-        if (i == "Camisa")
-        {
-            console.log("si esta disponible");
-            
-        }
+let inventario = [
+    { nombre: "Camisa", precio: 20 },
+    { nombre: "Zapatos", precio: 50 }
+];
+
+
+function buscarProducto(nombre,producto){
+    for (let i in inventario) {
+        if (inventario[i].nombre == productoIngresado) {
+            console.log(inventario[i].nombre + " si existe");
+            console.log(inventario[i]);
+            return true;
+        }a
     }
-   }
-   buscarProducto(productoAbuscar);
+    console.log("null");
+    return false;    
+}
+buscarProducto(productoIngresado);   
 
 
 
